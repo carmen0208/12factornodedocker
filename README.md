@@ -55,3 +55,27 @@ MONGO_URI=mongodb://localhost:27017/foo  node index.js
 yarn add dotenv
 node index.js
 ```
+
+## 5. Build, Release and Run Containers with Docker Compose
+
+* Dockerfile
+* docker-compose.yml
+* The .dockerignore file
+
+   The .dockerignore file is the tool, that can help you to define the Docker build context you really need. Using this file, you can specify ignore rules and exceptions from these rules for files and folder, that won’t be included in the build context and thus won’t be packed into an archive and uploaded to the Docker server.
+
+ 
+```sh
+docker build -t foo/bar:1.0 .  ## The docker build command builds Docker images from a Dockerfile and a “context”
+docker images # would get foo/bar:1.0 image
+
+# Git commit and tag release
+git tag v1.0.0
+git checkout v1.0.0
+docker-compose up -d app
+# docker info and docker log
+docker ps
+docker logs -f foo_app_1
+
+```
+
