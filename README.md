@@ -46,3 +46,12 @@ git merge hotfix/fix-foo
 
 Pin down npm package version with Yarn.lock: npm shrinkwrap > npm install > npm shrinkwrap is not guaranteed to produce the same output as just shrinkwrapping once, whereas Yarn explicitly uses "an install algorithm that is deterministic and reliable"
 
+## 3. .env file to manage configuration values
+
+```sh
+## before dotenv add
+MONGO_URI=mongodb://localhost:27017/foo  node index.js
+## After dotenv add
+yarn add dotenv
+node index.js
+```
