@@ -42,4 +42,7 @@ git merge hotfix/fix-foo
 
 # CLEANUP: delete all the branches that create for this release
 ```
+## 2. Yarn.lock
+
+Pin down npm package version with Yarn.lock: npm shrinkwrap > npm install > npm shrinkwrap is not guaranteed to produce the same output as just shrinkwrapping once, whereas Yarn explicitly uses "an install algorithm that is deterministic and reliable"
 
